@@ -11,11 +11,28 @@ import java.io.*;
 import java.util.*;
 import java.util.Collections;
 public class Game {
-    static ArrayList<Card> centerCards;
-    static Deck deckInstance;
-    private static ArrayList<Players> playersArray;
+    static String roundType;
+    static int outCounter;
+    static Integer handCardValue;
+    static Integer PileCardValue;
+    static int playerAmmount;
+    static String playerStringInputName;
 
-    public static void main(String[] args) throws ParserConfigurationException, ParseException, SAXException, PropertyListFormatException, IOException {
+    Game() {
+        this.roundType = " ";
+        this.outCounter = 0;
+        this.handCardValue = null;
+        this.PileCardValue = null;
+        this.playerAmmount = 0;
+        this.playerStringInputName = " ";
+    }
+
+    static Deck deckInstance;
+    static ArrayList<Players> playersArray;
+    static ArrayList<Card> centerCards;
+    static ArrayList<Players> winnerPile;
+
+    /*public static void main(String[] args) throws ParserConfigurationException, ParseException, SAXException, PropertyListFormatException, IOException {
         deckInstance = new Deck();
         centerCards = new ArrayList<>();
         playersArray = new ArrayList<>();
@@ -92,7 +109,7 @@ public class Game {
         }
 
     }
-
+*/
     // runs the player choosing what category the round will be in
     static String chooseType(String TypeHolder) {
         Scanner input = new Scanner(System.in);
@@ -103,6 +120,7 @@ public class Game {
         while (!TypeHolder.equals("hardness") && !TypeHolder.equals("specific gravity") && !TypeHolder.equals("cleavage") && !TypeHolder.equals("crustal abundance") && !TypeHolder.equals("economic value"));
         return TypeHolder;
     }
+
     // holds the vlaues of the hardness category from string to integer
     static int getHardness(String hardness) {
         int HardnessValue = 0;
@@ -180,6 +198,7 @@ public class Game {
         }
         return HardnessValue;
     }
+
     // holds the Gravity values from String to integer
     public static int getGravity(String Gravity) {
         int GravityValue = 0;
@@ -283,6 +302,7 @@ public class Game {
         }
         return GravityValue;
     }
+
     // holds the Cleavage vlaues from String to Integer
     public static int getCleavage(String Cleavage) {
         int CleavageValue = 0;
@@ -320,6 +340,7 @@ public class Game {
         }
         return CleavageValue;
     }
+
     // holds the CrustalAbundance vlaues from String to Integer
     public static int getCrustalAbundance(String Crustal) {
         int CrustalAbundanceValue = 0;
@@ -340,6 +361,7 @@ public class Game {
         }
         return CrustalAbundanceValue;
     }
+
     // holds the Economic vlaues from String to Integer
     public static int getEconomicValue(String Economic) {
         int EconomicValueValue = 0;
@@ -359,6 +381,7 @@ public class Game {
         }
         return EconomicValueValue;
     }
+
     static void CardsPile() {
         System.out.println("<Center Card Pile \n " + centerCards.toString());
     }
@@ -367,6 +390,7 @@ public class Game {
         playerPlace.PlayerHand.add(deckInstance.deckArray.get(0));
         deckInstance.deckArray.remove(0);
     }
+
     //resets the round fro all players when a trump card is played
     static void trumpPlayerReset() {
         System.out.println("A trump card has been played everyone is back in the round now");
@@ -375,6 +399,8 @@ public class Game {
         }
         Play.outCounter = 0;
     }
+
+    /*
     // compares the cards values to determine if a card is larger category than the other
     static String cardCompare(Players playerPlace, String cardCompareType, int playerIndex, Integer playersArrayIndex) {
         Integer handCardValue = null;
@@ -593,5 +619,5 @@ public class Game {
         }
         return cardCompareType;
     }
-
+*/
 }

@@ -1,46 +1,50 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 /**
  * Created by moggj_000 on 18/10/2016.
  */
 public class PlayerAmountUI extends JFrame implements ActionListener {
+    static Game instance;
 
-    JButton button1 = new JButton("3");
-    JButton button2 = new JButton("4");
-    JButton button3 = new JButton("5");
 
-    JPanel panel1 = new JPanel(new FlowLayout());
-    JPanel panel2 = new JPanel();
-    public PlayerAmountUI(){
-        setLayout(new FlowLayout());
+    FlowLayout flow = new FlowLayout();
+    JLabel status = new JLabel("Please select amount of players");
+    JButton ThreePlayers = new JButton("3");
+    JButton FourPlayers = new JButton("4");
+    JButton FivePlayers = new JButton("5");
+
+    public PlayerAmountUI(Game gameInstance){
+        super("Mineral Super Trumps");
+        setLayout(flow);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        add(panel1);
-        add(panel2);
-        panel1.add(button1);
-        panel1.add(button2);
-        panel1.add(button3);
+        add(status);
+        add(ThreePlayers);
+        add(FourPlayers);
+        add(FivePlayers);
 
-        button1.addActionListener(this);
-        button2.addActionListener(this);
-        button3.addActionListener(this);
-        setSize(400, 200);
-        setVisible(true);
+        ThreePlayers.addActionListener(this);
+        FourPlayers.addActionListener(this);
+        FivePlayers.addActionListener(this);
+        instance = gameInstance;
     }
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        Object source = e.getSource();
-        if(source == button1)
-
-        else if(source  == button2)
-
-        else if(source  == button3)
-
+        if (e.getSource() == ThreePlayers) {
+            instance.playerAmmount = 3;
+            JOptionPane.showMessageDialog(null, "There will be 3 players");
+            dispose();
+        } else if (e.getSource() == FourPlayers) {
+            instance.playerAmmount = 4;
+            JOptionPane.showMessageDialog(null, "There will be 4 players");
+            dispose();
+        } else if (e.getSource() == FivePlayers) {
+            instance.playerAmmount = 5;
+            JOptionPane.showMessageDialog(null, "There will be 5 players");
+            dispose();
+        }
     }
-    public static void main(String[] args){
-        PlayerAmountUI frame = new PlayerAmountUI();
-    }
+
 }
