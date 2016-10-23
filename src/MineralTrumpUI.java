@@ -9,11 +9,10 @@ import java.awt.event.*;
 public class MineralTrumpUI implements ItemListener {
     JPanel cards; //panel with CardLayout
     final static String BUTTONPANEL = "Cards with JButtons";
-    final static String TEXTPANEL = "Cards with JTextField";
 
     public void addComponentToPane(Container pane){
         JPanel comboBoxPane = new JPanel();//FlowLayout
-        String comboBoxItems[] = {BUTTONPANEL, TEXTPANEL};
+        String comboBoxItems[] = {BUTTONPANEL};
         JComboBox cb = new JComboBox(comboBoxItems);
         cb.setEditable(false);
         cb.addItemListener(this);
@@ -25,12 +24,9 @@ public class MineralTrumpUI implements ItemListener {
         card1.add(new JButton("Button 2"));
         card1.add(new JButton("Button 3"));
 
-        JPanel card2 = new JPanel();
-        card2.add(new JTextField("TextField", 20));
         //panel that conatian the cards
         cards = new JPanel(new CardLayout());
         cards.add(card1, BUTTONPANEL);
-        cards.add(card2, TEXTPANEL);
 
         pane.add(comboBoxPane, BorderLayout.PAGE_START);
         pane.add(cards, BorderLayout.CENTER);
