@@ -45,22 +45,27 @@ public class ChangeCategoryUI extends JFrame implements ActionListener {
         if (e.getSource() == hardnessButton){
             instance.roundType = "hardness";
             JOptionPane.showMessageDialog(null, "The new category is: " + instance.roundType);
+            Linstance.startMineralTrump();
             dispose();
         } else if (e.getSource() == specificGravityButton){
             instance.roundType = "specific gravity";
             JOptionPane.showMessageDialog(null, "The new category is: " + instance.roundType);
+            Linstance.startMineralTrump();
             dispose();
         }else if (e.getSource() == cleavageButton) {
             instance.roundType = "cleavage";
             JOptionPane.showMessageDialog(null, "The new category is: " + instance.roundType);
+            Linstance.startMineralTrump();
             dispose();
         }else if (e.getSource() == crustalAbundanceButton) {
         instance.roundType = "crustal abundance";
         JOptionPane.showMessageDialog(null, "The new category is: " + instance.roundType);
+            Linstance.startMineralTrump();
         dispose();
     }else if (e.getSource() == economicValueButton) {
         instance.roundType = "economic value";
         JOptionPane.showMessageDialog(null, "The new category is: " + instance.roundType);
+            Linstance.startMineralTrump();
         dispose();
     }
     }

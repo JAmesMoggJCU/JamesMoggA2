@@ -45,6 +45,7 @@ public class PlayerNameUI extends JFrame implements ActionListener {
         if (playerNum == instance.playerAmmount) {
             JOptionPane.showMessageDialog(null, "Welcome to the game: " + name);
             JOptionPane.showMessageDialog(null, "Lets begin the game");
+            Linstance.startChangeCategory();
             dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Welcome to the game: " + name);
