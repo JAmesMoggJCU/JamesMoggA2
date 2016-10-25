@@ -7,13 +7,17 @@ import javax.swing.*;
  */
 public class PlayerAmountUI extends JFrame implements ActionListener {
     static Game instance;
-
+    static Launcher Linstance;
 
     FlowLayout flow = new FlowLayout();
     JLabel status = new JLabel("Please select amount of players");
     JButton ThreePlayers = new JButton("3");
     JButton FourPlayers = new JButton("4");
     JButton FivePlayers = new JButton("5");
+
+    public static void getLauncher(Launcher launcherInstance) {
+        Linstance = launcherInstance;
+    }
 
     public PlayerAmountUI(Game gameInstance){
         super("Mineral Super Trumps");
@@ -27,7 +31,7 @@ public class PlayerAmountUI extends JFrame implements ActionListener {
         ThreePlayers.addActionListener(this);
         FourPlayers.addActionListener(this);
         FivePlayers.addActionListener(this);
-        instance = gameInstance;
+
     }
     @Override
     public void actionPerformed(ActionEvent e)

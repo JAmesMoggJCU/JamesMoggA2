@@ -9,12 +9,17 @@ import java.util.ArrayList;
 public class MineralTrumpUI extends JFrame implements ActionListener {
     static Game instance;
     static int playerLoop = 0;
+    static Launcher Linstance;
     BorderLayout borderLayout = new BorderLayout();
     JLabel playerName = new JLabel("The current player is: " + instance.playersArray.get(playerLoop).Name);
     JLabel statusMessage = new JLabel("The type for the current round is: " + instance.roundType);
     JPanel contentPane = new JPanel();
     public ArrayList<JButton> buttons = new ArrayList<JButton>();
     JButton passButton = new JButton("Pass");
+
+    public static void getLauncher(Launcher launcherInstance) {
+        Linstance = launcherInstance;
+    }
 
     public void getCardButtons() {
         for (int x = 0; x < 10; x++) {

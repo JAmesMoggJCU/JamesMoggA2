@@ -7,6 +7,7 @@ import java.awt.event.*;
 
 public class ChangeCategoryUI extends JFrame implements ActionListener {
     static Game instance;
+    static Launcher Linstance;
     FlowLayout flowLayout = new FlowLayout();
     JLabel Message = new JLabel("Please select a category: ");
     JButton hardnessButton = new JButton("Hardness");
@@ -15,6 +16,9 @@ public class ChangeCategoryUI extends JFrame implements ActionListener {
     JButton crustalAbundanceButton = new JButton("Crustal Abundance");
     JButton economicValueButton = new JButton("Economic Value");
 
+    public static void getLauncher(Launcher launcherInstance) {
+        Linstance = launcherInstance;
+    }
 
     public ChangeCategoryUI(Game gameInstance){
         super("Mineral Super Trumps");

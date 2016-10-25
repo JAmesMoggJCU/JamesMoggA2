@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 public class PlayerNameUI extends JFrame implements ActionListener {
     static Game instance;
     static int playerNum = 0;
+    static Launcher Linstance;
 
     BorderLayout borderLayout = new BorderLayout();
     JLabel Message = new JLabel("Enter a name for player: " + playerNum);
@@ -16,6 +17,9 @@ public class PlayerNameUI extends JFrame implements ActionListener {
     JButton enterPlayerName = new JButton("Enter");
     static String name;
 
+    public static void getLauncher(Launcher launcherInstance) {
+        Linstance = launcherInstance;
+    }
 
     public PlayerNameUI(Game gameInstance) {
         super("Mineral Super Trumps");
