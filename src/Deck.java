@@ -4,14 +4,20 @@
 import com.dd.plist.*;
 import com.dd.plist.PropertyListParser;
 
+import javax.imageio.ImageIO;
 import javax.xml.parsers.*;
+
 
 import org.xml.sax.*;
 
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
 import java.text.ParseException;
 import java.io.*;
 import java.io.File;
 import java.util.ArrayList;
+
 public class Deck {
     public ArrayList<Card> deckArray = new ArrayList();
 
@@ -32,21 +38,18 @@ public class Deck {
                 NSDictionary card0 = (NSDictionary) cardsArray.objectAtIndex(cardCounter); // index of the cards
 
                 NSString value0 = (NSString) card0.objectForKey("title");
-                NSString value1 = (NSString) card0.objectForKey("chemistry");
-                NSString value2 = (NSString) card0.objectForKey("classification");
-                NSString value3 = (NSString) card0.objectForKey("crystal_system");
-                NSArray value4 = (NSArray) card0.objectForKey("occurrence");
-                NSString value5 = (NSString) card0.objectForKey("hardness");
-                NSString value6 = (NSString) card0.objectForKey("specific_gravity");
-                NSString value7 = (NSString) card0.objectForKey("cleavage");
-                NSString value8 = (NSString) card0.objectForKey("crustal_abundance");
-                NSString value9 = (NSString) card0.objectForKey("economic_value");
+                NSString value1 = (NSString) card0.objectForKey("fileName");
+                NSString value2 = (NSString) card0.objectForKey("chemistry");
+                NSString value3 = (NSString) card0.objectForKey("classification");
+                NSString value4 = (NSString) card0.objectForKey("crystal_system");
+                NSArray value5 = (NSArray) card0.objectForKey("occurrence");
+                NSString value6 = (NSString) card0.objectForKey("hardness");
+                NSString value7 = (NSString) card0.objectForKey("specific_gravity");
+                NSString value8 = (NSString) card0.objectForKey("cleavage");
+                NSString value9 = (NSString) card0.objectForKey("crustal_abundance");
+                NSString value10 = (NSString) card0.objectForKey("economic_value");
 
-                deckArray.add(new MineralCard(value0, value1, value2, value3, value4, value5, value6, value7, value8, value9) {
-                    @Override
-                    String getEconomicvalue() {
-                        return null;
-                    }
+                deckArray.add(new MineralCard(value0, value1, value2, value3, value4, value5, value6, value7, value8, value9, value10) {
 
                     @Override
                     String getDescription() {
@@ -61,9 +64,10 @@ public class Deck {
                 NSDictionary card1 = (NSDictionary) cardsArray.objectAtIndex(trumpCounter); // index of the cards
 
                 NSString value0 = (NSString) card1.objectForKey("title");
-                NSString value1 = (NSString) card1.objectForKey("subtitle");
+                NSString value1 = (NSString) card1.objectForKey("fileName");
+                NSString value2 = (NSString) card1.objectForKey("subtitle");
 
-                deckArray.add(new TrumpCard(value0, value1) {
+                deckArray.add(new TrumpCard(value0, value1, value2) {
                     @Override
                     String getChemistry() {
                         return null;
@@ -105,17 +109,7 @@ public class Deck {
                     }
 
                     @Override
-                    String getCrustalAbundance() {
-                        return null;
-                    }
-
-                    @Override
-                    String getEconomicvalue() {
-                        return null;
-                    }
-
-                    @Override
-                    String getCrustal_abundance() {
+                    String getCrustal_Abundance() {
                         return null;
                     }
 

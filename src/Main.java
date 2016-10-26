@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) throws PropertyListFormatException, ParserConfigurationException, SAXException, ParseException, IOException {
         game = new Game();
-        game.deckInstance =new Deck();
+        game.deckInstance = new Deck();
         game.playersArray = new ArrayList<>();
         game.centerCards = new ArrayList<>();
         game.winnerPile = new ArrayList<>();

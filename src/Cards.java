@@ -4,11 +4,20 @@
 import com.dd.plist.NSString;
 import com.dd.plist.NSArray;
 
+import java.awt.*;
+
 abstract class Card{
     String title;
+    String fileName;
 
-    Card(NSString in_name) {
+    Card() {
+
+    }
+
+    Card(NSString in_name, NSString inFileName){
+
         this.title = in_name.toString();
+        this.fileName = inFileName.toString();
     }
 
     abstract String getChemistry();
@@ -25,9 +34,9 @@ abstract class Card{
 
     abstract String getCleavage();
 
-    abstract String getCrustalAbundance();
+    abstract String getCrustal_Abundance();
 
-    abstract String getEconomicvalue();
+    abstract String getEconomic_value();
 
     abstract String getDescription();
 

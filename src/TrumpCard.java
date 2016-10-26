@@ -6,23 +6,23 @@ import com.dd.plist.NSString;
 abstract class TrumpCard extends Card {
     public String subtitle;
 
-    TrumpCard(NSString in_name, NSString description) {
-        super(in_name);
+    TrumpCard(NSString in_name, NSString inFileName, NSString description) {
+        super(in_name, inFileName);
         this.subtitle = description.toString();
 
     }
 
     @Override
-    public String toString() {
+    /*public String toString() {
         return ("\n" + "This Trump Card is\n " + this.title + "\n its description is\n " + this.subtitle);
-    }
+    }*/
     public String getDescription() {
         return subtitle;
     }
 
     abstract String getSpecific_gravity();
 
-    abstract String getCrustal_abundance();
+    abstract String getCrustal_Abundance();
 
     abstract String getEconomic_value();
 }

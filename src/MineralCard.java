@@ -15,23 +15,23 @@ abstract class MineralCard extends Card {
     public String crustal_abundance;
     public String economic_value;
 
-    MineralCard(NSString in_name, NSString in_class1, NSString in_class2, NSString in_class3, NSArray in_class4, NSString in_class5, NSString in_class6, NSString in_class7, NSString in_class8, NSString in_class9) {
-        super(in_name);
+    MineralCard(NSString in_name, NSString inFileName, NSString in_class1, NSString in_class2, NSString in_class3, NSArray in_class4, NSString in_class5, NSString in_class6, NSString in_class7, NSString in_class8, NSString in_class9) {
+        super(in_name, inFileName);
         this.chemistry = in_class1.toString();
         this.classification = in_class2.toString();
         this.crystal_system = in_class3.toString();
         this.occurrence = in_class4;
-        this.hardness = in_class5.toString();
-        this.specific_gravity = in_class6.toString();
+        this.hardness = in_class5.toString().replaceAll("\\s+","");
+        this.specific_gravity = in_class6.toString().replaceAll("\\s+","");
         this.cleavage = in_class7.toString();
         this.crustal_abundance = in_class8.toString();
         this.economic_value = in_class9.toString();
     }
     @Override
-    public String toString() {
-        return ("\n" + "Name:  " + this.title + "   " + "Gravity:  " + this.specific_gravity + "    " + "Hardness:  " + this.hardness + "      " + "Crystal abundance:  " + this.crustal_abundance + "     " + "Economic Value:  " + this.economic_value);
+    /*public String toString() {
+        return ("\n" + "Name:  " + this.title + "   " + "Gravity:  " + this.specific_gravity + "    " + "Hardness:  " + this.hardness + "      " + "Crystal abundance:  " + this.crustal_abundance + "     " + "Economic Value:  " + this.economic_value);*/
 
-    }
+
     public String getChemistry(){
         return chemistry;
     }
@@ -59,7 +59,7 @@ abstract class MineralCard extends Card {
         return cleavage;
     }
 
-    public String getCrustalAbundance() {
+    public String getCrustal_Abundance() {
         return crustal_abundance;
     }
 

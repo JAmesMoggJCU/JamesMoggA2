@@ -22,8 +22,10 @@ public class MineralTrumpUI extends JFrame implements ActionListener {
     }
 
     public void getCardButtons() {
-        for (int x = 0; x < 10; x++) {
-            buttons.add(new JButton(" " + x));
+        for (int x = 0; x < instance.playersArray.get(playerLoop).PlayerHand.size(); x++) {
+            String filePath = "F:\\JCU\\programming 2\\assignment part 2\\images\\" + instance.playersArray.get(playerLoop).PlayerHand.get(x).fileName;
+            ImageIcon imageIcon = new ImageIcon(new ImageIcon(filePath).getImage().getScaledInstance(135, 189, Image.SCALE_DEFAULT));
+            buttons.add(new JButton(imageIcon));
             buttons.get(x).addActionListener(this);
             contentPane.add(buttons.get(x));
         }
