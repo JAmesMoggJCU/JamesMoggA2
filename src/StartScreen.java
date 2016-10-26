@@ -20,6 +20,7 @@ public class StartScreen extends JFrame implements ActionListener {
         add(Message);
         add(startButton);
         startButton.addActionListener(this);
+        getContentPane().setBackground(Color.GREEN);
     }
     @Override
     public void actionPerformed(ActionEvent e) {

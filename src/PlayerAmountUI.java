@@ -31,6 +31,7 @@ public class PlayerAmountUI extends JFrame implements ActionListener {
         ThreePlayers.addActionListener(this);
         FourPlayers.addActionListener(this);
         FivePlayers.addActionListener(this);
+        getContentPane().setBackground(Color.CYAN);
 
     }
     @Override

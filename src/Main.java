@@ -4,6 +4,7 @@
 import com.dd.plist.*;
 import org.xml.sax.SAXException;
 
+import java.awt.Color;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.text.ParseException;
@@ -31,7 +32,7 @@ public class Main {
     }
     public static void startStartScreen(){
         StartScreen startScreen = new StartScreen();
-        startScreen.setSize(500, 500);
+        startScreen.setSize(300, 300);
         startScreen.setVisible(true);
     }
 }

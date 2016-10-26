@@ -3,8 +3,8 @@
  */
 public class Launcher {
     static Game instance;
-    static int length = 500;
-    static int height = 500;
+    static int length = 200;
+    static int height = 300;
 
     public static void getGameInstance(Game gameInstance) {
         instance = gameInstance;
@@ -30,7 +30,7 @@ public class Launcher {
 
     public static void startMineralTrump() {
         MineralTrumpUI mineralTrumpUI = new MineralTrumpUI(instance);
-        mineralTrumpUI.setSize(length, height);
+        mineralTrumpUI.setSize(1000, 700);
         mineralTrumpUI.setVisible(true);
     }
 }

@@ -17,7 +17,7 @@ public class Game {
     static Integer PileCardValue;
     static int playerAmmount;
     static String playerStringInputName;
-
+    //holds the static values for each of the variables used
     Game() {
         this.roundType = " ";
         this.outCounter = 0;
@@ -382,7 +382,7 @@ public class Game {
         return EconomicValueValue;
     }
 
-    static void CardsPile() {
+  /*  static void CardsPile() {
         System.out.println("<Center Card Pile \n " + centerCards.toString());
     }
 
@@ -400,7 +400,7 @@ public class Game {
         Play.outCounter = 0;
     }
 
-    /*
+
     // compares the cards values to determine if a card is larger category than the other
     static String cardCompare(Players playerPlace, String cardCompareType, int playerIndex, Integer playersArrayIndex) {
         Integer handCardValue = null;

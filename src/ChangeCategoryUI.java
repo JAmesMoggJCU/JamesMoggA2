@@ -36,6 +36,7 @@ public class ChangeCategoryUI extends JFrame implements ActionListener {
         cleavageButton.addActionListener(this);
         crustalAbundanceButton.addActionListener(this);
         economicValueButton.addActionListener(this);
+        getContentPane().setBackground(Color.cyan);
 
     }
 
