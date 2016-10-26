@@ -19,11 +19,11 @@ public class MineralTrumpUI extends JFrame implements ActionListener {
     public ArrayList<JButton> buttons = new ArrayList<JButton>();
     JButton passButton = new JButton("Pass");
 
-
+    // links the frame to the launch controller
     public static void getLauncher(Launcher launcherInstance) {
         Linstance = launcherInstance;
     }
-
+    //draws a card from the deck and removes it adding it to the players hand
     public void drawCard(){
         try {
             instance.playersArray.get(playerLoop).PlayerHand.add(instance.deckInstance.deckArray.get(0));
@@ -32,6 +32,7 @@ public class MineralTrumpUI extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, "There are no more cards in the deck");
         }
     }
+    //this holds the images of different cards as icons inside a button
     public void getCardButtons() {
         for (int x = 0; x < instance.playersArray.get(playerLoop).PlayerHand.size(); x++) {
             String filePath = "F:\\JCU\\programming 2\\assignment part 2\\images\\" + instance.playersArray.get(playerLoop).PlayerHand.get(x).fileName;
@@ -41,7 +42,7 @@ public class MineralTrumpUI extends JFrame implements ActionListener {
             contentPane.add(buttons.get(x));
         }
     }
-
+    //creates the center cardpile and holds the image of what is played
     public void centerCardPilePane(){
         try {
             int topCardIndex = instance.centerCards.size() - 1;
@@ -54,13 +55,24 @@ public class MineralTrumpUI extends JFrame implements ActionListener {
             add(centerPile, borderLayout.AFTER_LINE_ENDS);
         }
     }
-
+    //reses the loop of players so it returns from 1 to the amount of players playing
     public void playerLoopReset() {
         if (playerLoop == instance.playersArray.size() - 1) {
             playerLoop = -1;
         }
     }
-
+    //starts a new round on the frame for players
+    public void newRound() {
+        if (instance.outCounter == instance.playerAmmount - 1) {
+            JOptionPane.showMessageDialog(null, "The current round has ended. The new round will start now");
+            for (int i = 0; i < instance.playersArray.size(); i++) {
+                instance.playersArray.get(i).inorOut = Boolean.TRUE;
+            }
+            Linstance.startChangeCategory(); //changes the category of the rounds
+            instance.outCounter = 0;
+        }
+    }
+    //holds the GUI infomation of placment for this frame
     public MineralTrumpUI(Game gameInstance) {
         super("Mineral Super Trumps");
         setLayout(borderLayout);
@@ -75,7 +87,7 @@ public class MineralTrumpUI extends JFrame implements ActionListener {
         passButton.addActionListener(this);
         getContentPane().setBackground(Color.WHITE);
     }
-
+    //runs the action events of when users press a button
     @Override
     public void actionPerformed(ActionEvent e) {
         if (!((JButton) e.getSource()).getText().contains("Pass")) {
@@ -89,7 +101,9 @@ public class MineralTrumpUI extends JFrame implements ActionListener {
             statusMessage.setText("You have chosen to pass");
             JOptionPane.showMessageDialog(null, "It is now " + instance.playersArray.get(playerLoop).Name + "'s turn");
             playerName.setText("The current player is: " + instance.playersArray.get(playerLoop).Name);
+            //removes the frame
             dispose();
+            //launches the stated frame
             Linstance.startMineralTrump();
         }
     }

@@ -6,6 +6,7 @@ import javax.swing.*;
  * Created by moggj_000 on 18/10/2016.
  */
 public class PlayerAmountUI extends JFrame implements ActionListener {
+    //brings the instance of game and launcher
     static Game instance;
     static Launcher Linstance;
 
@@ -14,7 +15,7 @@ public class PlayerAmountUI extends JFrame implements ActionListener {
     JButton ThreePlayers = new JButton("3");
     JButton FourPlayers = new JButton("4");
     JButton FivePlayers = new JButton("5");
-
+    //links the frame to the launcher
     public static void getLauncher(Launcher launcherInstance) {
         Linstance = launcherInstance;
     }
@@ -34,23 +35,24 @@ public class PlayerAmountUI extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.CYAN);
 
     }
+    //holds what is done when a player presses a button
     @Override
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == ThreePlayers) {
-            instance.playerAmmount = 3;
+            instance.playerAmmount = 3; // when only certaina mount of players chosen sent to the game to hold
             JOptionPane.showMessageDialog(null, "There will be 3 players");
             Linstance.startPlayerName();
             dispose();
         } else if (e.getSource() == FourPlayers) {
-            instance.playerAmmount = 4;
+            instance.playerAmmount = 4;// when only certaina mount of players chosen sent to the game to hold
             JOptionPane.showMessageDialog(null, "There will be 4 players");
             Linstance.startPlayerName();
             dispose();
         } else if (e.getSource() == FivePlayers) {
-            instance.playerAmmount = 5;
+            instance.playerAmmount = 5;// when only certaina mount of players chosen sent to the game to hold
             JOptionPane.showMessageDialog(null, "There will be 5 players");
-            Linstance.startPlayerName();
+            Linstance.startPlayerName();//linked to the launcher and starts the frame stated
             dispose();
         }
     }

@@ -26,7 +26,7 @@ public class Game {
         this.playerAmmount = 0;
         this.playerStringInputName = " ";
     }
-
+    //refrednce to the classes used
     static Deck deckInstance;
     static ArrayList<Players> playersArray;
     static ArrayList<Card> centerCards;

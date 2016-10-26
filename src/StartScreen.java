@@ -9,10 +9,11 @@ public class StartScreen extends JFrame implements ActionListener {
     FlowLayout flowLayout = new FlowLayout();
     JLabel Message = new JLabel("Welcome to the Mineral Super Trumps");
     JButton startButton = new JButton("Play Game");
-
+    // links the frame to the launch controller
     public static void getLauncher(Launcher launcherInstance){
         Linstance = launcherInstance;
     }
+    //hold the data for the frame
     public StartScreen() {
         super("Mineral Super Trumps");
         setLayout(flowLayout);
@@ -22,6 +23,7 @@ public class StartScreen extends JFrame implements ActionListener {
         startButton.addActionListener(this);
         getContentPane().setBackground(Color.GREEN);
     }
+    //action event of when a player clicks the button
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == startButton) {

@@ -11,7 +11,9 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 public class Main {
+    // links game
     static Game game;
+    //links the launcher contorl
     static Launcher _launcher;
 
     public static void main(String[] args) throws PropertyListFormatException, ParserConfigurationException, SAXException, ParseException, IOException {
@@ -22,7 +24,7 @@ public class Main {
         game.winnerPile = new ArrayList<>();
         Collections.shuffle(game.deckInstance.deckArray);
         _launcher = new Launcher();
-
+        //runs the launcher code in wat order is below while being linked to the game class
         _launcher.getGameInstance(game);
         StartScreen.getLauncher(_launcher);
         PlayerAmountUI.getLauncher(_launcher);
@@ -30,6 +32,7 @@ public class Main {
         ChangeCategoryUI.getLauncher(_launcher);
         startStartScreen();
     }
+    //holds and runs the beginning frame that is then linked to the next grouping
     public static void startStartScreen(){
         StartScreen startScreen = new StartScreen();
         startScreen.setSize(300, 300);
